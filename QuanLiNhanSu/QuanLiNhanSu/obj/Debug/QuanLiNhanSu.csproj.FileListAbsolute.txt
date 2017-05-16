@@ -1,0 +1,16 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\QuanLiNhanSu\QuanLiNhanSu\bin\Debug\QuanLiNhanSu.exe.config
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\bin\Debug\QuanLiNhanSu.exe.config
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.csprojResolveAssemblyReference.cache
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.BANGCAP.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.NHANVIEN.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.NHANVIENVACHUCVU.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.PHONGBAN.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.Properties.Resources.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.csproj.GenerateResource.Cache
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\bin\Debug\QuanLiNhanSu.exe
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\bin\Debug\QuanLiNhanSu.pdb
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.exe
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.pdb
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.CHUCVU.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.DUAN.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.NHANVIENVADUAN.resources
