@@ -14,3 +14,6 @@ E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\Qua
 E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.CHUCVU.resources
 E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.DUAN.resources
 E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.NHANVIENVADUAN.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.MENU.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.THONGKE_NHANVIENPHONGBAN.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.THONGKE_NHANVIENDUAN.resources

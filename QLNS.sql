@@ -252,3 +252,23 @@ alter proc nhanVienVaChucVu_sua
 				delete from NhanVienVaDuAn
 				where IDChiTiet=@mact
 			end
+-- thống kê phòng ban có những nhân viên nào
+create proc ThongKeNhanVien
+	@mapb int 
+as
+	begin 
+		select IDNhanVien, HoTen,GioiTinh,NgaySinh,QueQuan
+		from NhanVien 
+		where IDPhongBan=@mapb
+	end
+	-- thống kê dự án có những nhân viên nào
+create proc ThongKeNhanVien1
+	@mada int 
+as
+	begin 
+		select b.IDNhanVien,b.HoTen,b.GioiTinh,b.NgaySinh,b.QueQuan
+		from NhanVienVaDuAn a
+		left join NhanVien b
+		on a.IDNhanVien= b.IDNhanVien
+		where a.IDDuAn=@mada
+ 	end
