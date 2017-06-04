@@ -75,5 +75,47 @@ namespace QuanLiNhanSu
             THONGKE_NHANVIENDUAN tk2 = new THONGKE_NHANVIENDUAN();
             tk2.Show();
         }
+
+        private void tỉnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TINH t = new TINH();
+            t.Show();
+        }
+
+        private void quậnHuyệnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            THANHPHO tp = new THANHPHO();
+            tp.Show();
+        }
+
+        private void phườngXãToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PHUONG p = new PHUONG();
+            p.Show();
+        }
+
+        private void phốThônToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PHO p = new PHO();
+            p.Show();
+        }
+
+        private void sốNhàToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SONHA sh = new SONHA();
+            sh.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LUONG l = new LUONG();
+            l.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            CHITIETLUONG ctl = new CHITIETLUONG();
+            ctl.Show();
+        }
     }
 }

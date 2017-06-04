@@ -17,3 +17,10 @@ E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\Qua
 E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.MENU.resources
 E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.THONGKE_NHANVIENPHONGBAN.resources
 E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.THONGKE_NHANVIENDUAN.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.TINH.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.THANHPHO.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.PHUONG.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.PHO.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.SONHA.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.LUONG.resources
+E:\năm 3\học kì 2\thực tập nhóm\GITHUB\quan-li-nhan-su\QuanLiNhanSu\QuanLiNhanSu\obj\Debug\QuanLiNhanSu.CHITIETLUONG.resources

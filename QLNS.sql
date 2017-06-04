@@ -32,12 +32,77 @@ create table NhanVien(
 	HoTen nvarchar(30) null,
 	NgaySinh date null,
 	GioiTinh nvarchar(10),
-	QueQuan nvarchar(100),
 	NgayVaoLam date null,
 	primary key(IDNhanVien),
 	foreign key(IDPhongBan) references PhongBan(IDPhongBan),
 	foreign key (IDBangCap) references BangCap(IDBangCap)
 )
+alter table NhanVien add IDTinh int null
+alter table NhanVien add IDThanhPho int null
+alter table NhanVien add IDPhuong int null
+alter table NhanVien add IDPho int null
+alter table NhanVien add IDSoNha int null
+alter table NhanVien add foreign key(IDTinh) references Tinh(IDTinh)
+alter table NhanVien add foreign key(IDThanhPho) references ThanhPho(IDThanhPho)
+alter table NhanVien add foreign key(IDPhuong) references Phuong(IDPhuong)
+alter table NhanVien add foreign key(IDPho) references Pho(IDPho)
+alter table NhanVien add foreign key(IDSoNha) references SoNha(IDSoNha)
+--tạo bảng lương 
+create table Luong(
+	IDLuong int identity not null,
+	HeSoLuong float null,
+	primary key (IDLuong)
+)
+--tạo bảng chi tiết lương
+create table ChiTietLuong(
+	IDChiTiet int identity not null, 
+	IDLuong int null,
+	IDNhanVien int null,
+	primary key(IDChiTiet),
+	foreign key(IDLuong) references Luong(IDLuong),
+	foreign key(IDNhanVien) references NhanVien(IDNhanVien)
+)
+alter table ChiTietLuong add NgayTangLuong date null
+--tạo bảng tỉnh 
+create table Tinh(
+	IDTinh int identity not null,
+	TenTinh nvarchar(20) null
+	primary key(IDTinh)
+)
+-- tạo bảng thành phố
+create table ThanhPho(
+	IDThanhPho int identity,
+	IDTinh int not null,
+	TenThanhPho  nvarchar(20) null,
+	primary key(IDThanhPho),
+	foreign key(IDTinh) references Tinh(IDTinh)
+)
+
+--tạo bảng Phường
+create table Phuong(
+	IDPhuong int identity, 
+	IDThanhPho int not null,
+	TenPhuong nvarchar(20) null,
+	primary key (IDPhuong),
+	foreign key(IDThanhPho) references  ThanhPho(IDThanhPho)
+)
+--tạo bảng phố
+create table Pho(
+	IDPho int identity,
+	IDPhuong int not null,
+	TenPho nvarchar(20) null,
+	primary key(IDPho),
+	foreign key(IDPhuong) references Phuong(IDPhuong)
+)
+--tạo bảng số nhà 
+create table SoNha(
+	IDSoNha int identity,
+	IDPho int null, 
+	TenSoNha int null,
+	primary key(IDSoNha),
+	foreign key (IDPho) references Pho(IDPho)
+)
+
 --tạo bảng nhân viên và dự án
 create table NhanVienVaDuAn(
 	IDNhanVien int not null,
@@ -176,19 +241,19 @@ as
 	end
 
 --thêm nhân viên
-create proc nhanVien_them
-	 @mapb int, @mabc int,@ten nvarchar(30), @ns date, @gt nvarchar(10), @qq nvarchar(100), @ngayvl date
+alter proc nhanVien_them
+	 @mapb int, @mabc int,@ten nvarchar(30), @ns date, @gt nvarchar(10), @ngayvl date,@idtinh int, @idthanhpho int , @idphuong int, @idpho int, @idsonha int
 as
 	begin
-		insert into NhanVien(IDPhongBan,IDBangCap,HoTen,NgaySinh,GioiTinh,QueQuan,NgayVaoLam) values (@mapb,@mabc,@ten,@ns,@gt,@qq,@ngayvl)
+		insert into NhanVien(IDPhongBan,IDBangCap,HoTen,NgaySinh,GioiTinh,NgayVaoLam,IDTinh,IDThanhPho,IDPhuong,IDPho,IDSoNha) values (@mapb,@mabc,@ten,@ns,@gt,@ngayvl,@idtinh,@idthanhpho,@idphuong,@idpho,@idsonha)
 	end
 --sửa nhân viên
-create proc nhanVien_sua
-	@manv int, @mapb int, @mabc int,@ten nvarchar(30), @ns date, @gt nvarchar(10), @qq nvarchar(100), @ngayvl date
+alter proc nhanVien_sua
+	 @manv int,@mapb int, @mabc int,@ten nvarchar(30), @ns date, @gt nvarchar(10), @ngayvl date,@idtinh int, @idthanhpho int , @idphuong int, @idpho int, @idsonha int
 as
 	begin
 		update NhanVien
-		set IDPhongBan=@mapb,IDBangCap=@mabc,HoTen=@ten,NgaySinh=@ns, GioiTinh=@gt, QueQuan=@qq,NgayVaoLam=@ngayvl
+		set IDPhongBan=@mapb,IDBangCap=@mabc,HoTen=@ten,NgaySinh=@ns, GioiTinh=@gt,NgayVaoLam=@ngayvl,IDTinh=@idtinh,IDThanhPho=@idthanhpho,IDPhuong=@idphuong,IDPho=@idpho,IDSoNha=@idsonha
 		where IDNhanVien =@manv
 	end
 	--xóa nhân viên
@@ -204,6 +269,29 @@ as
 					where IDNhanVien =@ma
 				end
 	end
+
+
+	--hiển thị nhân viên lên datagridview
+	create proc hienThiNhanVien
+	as
+		begin
+			select a.IDNhanVien,a.HoTen,b.TenPhongBan,c.TenBangCap,a.NgaySinh,a.GioiTinh,a.NgayVaoLam,d.TenTinh,e.TenThanhPho,f.TenPhuong,g.TenPho,h.TenSoNha
+			from NhanVien a 
+			inner join PhongBan b 
+			on a.IDPhongBan=b.IDPhongBan 
+			inner join BangCap c
+			on a.IDBangCap=c.IDBangCap
+			inner join Tinh d
+			on a.IDTinh=d.IDTinh
+			inner join ThanhPho e
+			on a.IDThanhPho=e.IDThanhPho
+			inner join Phuong f
+			on a.IDPhuong=f.IDPhuong
+			inner join Pho g
+			on a.IDPho=g.IDPho
+			inner join SoNha h
+			on a.IDSoNha=h.IDSoNha
+		end
 	--thêm nhân viên và chức vụ
 	create proc nhanVienVaChucVu_them
 	@manv int, @macv int, @ngaync date
@@ -272,3 +360,233 @@ as
 		on a.IDNhanVien= b.IDNhanVien
 		where a.IDDuAn=@mada
  	end
+	--hiển thị các huyện theo tỉnh
+	create proc HuyenTheoTinh
+	@ma int
+	as
+		begin
+			select * from ThanhPho
+			where IDTinh = @ma
+		end
+	-- hiển thị xã theo huyện
+	create proc XaTheoHuyen
+	@ma int 
+	as 
+		begin
+			select * from Phuong
+			where IDThanhPho=@ma
+		end
+-- hiển thị thôn theo xã
+create proc ThonTheoXa
+@ma int 
+as
+	begin
+		select * from Pho
+		where IDPhuong=@ma
+	end
+--hiển thị số nhà theo phố
+alter proc SoNhaTheoPho
+@ma int 
+as 
+	begin 
+		select * from SoNha
+		where IDPho= @ma
+	end
+--thêm tỉnh
+alter proc tinh_them
+	 @ten nvarchar(20)
+as
+	begin
+		insert into Tinh( TenTinh) values (@ten)
+	end
+-- sửa tỉnh
+create proc tinh_sua
+	@ma int, @ten nvarchar(20)
+as
+	begin
+		update Tinh
+		set TenTinh=@ten
+		where IDTinh=@ma
+	end
+-- xóa tỉnh
+create proc tinh_xoa
+	@ma int
+as
+	begin
+		if @ma in (select IDTinh from ThanhPho)
+				print N'không thể xóa ,tỉnh đang chứa huyện'
+			else
+				begin
+					delete from Tinh
+					where IDTinh=@ma
+				end
+	end
+--thêm thành phố
+alter proc thanhPho_them
+	 @ten nvarchar(20), @tinh nvarchar(20)
+as
+	begin
+		insert into ThanhPho( TenThanhPho,IDTinh) values (@ten,@tinh)
+	end
+-- sửa thành phố
+alter proc thanhPho_sua
+	@ma int, @ten nvarchar(20), @tinh nvarchar(20)
+as
+	begin
+		update ThanhPho
+		set TenThanhPho=@ten,IDTinh=@tinh
+		where IDThanhPho=@ma
+	end
+-- xóa thành phố
+alter proc thanhPho_xoa
+	@ma int
+as
+	begin
+		if @ma in (select IDThanhPho from Phuong)
+				print N'không thể xóa ,thành phố đang chứa phường'
+			else
+				begin
+					delete from ThanhPho
+					where IDThanhPho=@ma
+				end
+	end
+--thêm phường
+create proc phuong_them
+	 @ten nvarchar(20), @thanhPho nvarchar(20)
+as
+	begin
+		insert into Phuong( TenPhuong,IDThanhPho) values (@ten,@thanhPho)
+	end
+-- sửa phường
+create proc phuong_sua
+	@ma int, @ten nvarchar(20), @thanhPho nvarchar(20)
+as
+	begin
+		update Phuong
+		set TenPhuong=@ten,IDThanhPho=@thanhPho
+		where IDPhuong=@ma
+	end
+-- xóa phường
+create proc phuong_xoa
+	@ma int
+as
+	begin
+		if @ma in (select IDPhuong from Pho)
+				print N'không thể xóa ,thành phố đang chứa phường'
+			else
+				begin
+					delete from Phuong
+					where IDPhuong=@ma
+				end
+	end
+--thêm phố
+create proc pho_them
+	 @ten nvarchar(20), @phuong nvarchar(20)
+as
+	begin
+		insert into Pho( TenPho,IDPhuong) values (@ten,@phuong)
+	end
+-- sửa phố
+create proc pho_sua
+	@ma int, @ten nvarchar(20), @phuong nvarchar(20)
+as
+	begin
+		update Pho
+		set TenPho=@ten,IDPhuong=@phuong
+		where IDPho=@ma
+	end
+-- xóa phố
+create proc pho_xoa
+	@ma int
+as
+	begin
+		if @ma in (select IDPho from SoNha)
+				print N'không thể xóa , phố đang chứa số nhà'
+			else
+				begin
+					delete from Pho
+					where IDPho=@ma
+				end
+	end
+--thêm số nhà
+create proc soNha_them
+	 @ten int, @pho nvarchar(20)
+as
+	begin
+		insert into SoNha( TenSoNha,IDPho) values (@ten,@pho)
+	end
+-- sửa số nhà
+create proc soNha_sua
+	@ma int, @ten int, @pho nvarchar(20)
+as
+	begin
+		update SoNha
+		set TenSoNha=@ten,IDPho=@pho
+		where IDSoNha=@ma
+	end
+-- xóa số nhà
+create proc soNha_xoa
+	@ma int
+as
+	begin
+		if @ma in (select IDSoNha from NhanVien)
+				print N'không thể xóa , nhân viên đang có số nhà này'
+			else
+				begin
+					delete from SoNha
+					where IDSoNha=@ma
+				end
+	end
+--thêm hệ số lương
+create proc luong_them
+	  @hesoluong float
+as
+	begin
+		insert into Luong( HeSoLuong) values (@hesoluong)
+	end
+-- sửa hệ số lương
+create proc luong_sua
+	@ma int, @hesoluong float
+as
+	begin
+		update Luong
+		set HeSoLuong=@hesoluong
+		where IDLuong=@ma
+	end
+-- xóa hệ số lương
+create proc luong_xoa
+	@ma int
+as
+	begin
+		if @ma in (select IDLuong from ChiTietLuong)
+				print N'không thể xóa , hệ số lương đang được dùng'
+			else
+				begin
+					delete from Luong
+					where IDLuong=@ma
+				end
+	end
+--thêm chi tiết lương
+create proc chitietluong_them
+	  @maluong int, @manv int, @ngaytangluong date
+as
+	begin
+		insert into ChiTietLuong( IDLuong,IDNhanVien,NgayTangLuong) values (@maluong,@manv,@ngaytangluong)
+	end
+-- sửa chi tiết lương
+create proc chitietluong_sua
+	@ma int, @maluong int, @manv int, @ngaytangluong date
+as
+	begin
+		update ChiTietLuong
+		set IDLuong=@maluong,IDNhanVien=@manv,NgayTangLuong=@ngaytangluong
+		where IDChiTiet=@ma
+	end
+-- xóa chi tiết lương
+create proc chitietluong_xoa
+	@ma int
+as
+	begin
+		delete from ChiTietLuong
+		where IDChiTiet=@ma			
+	end

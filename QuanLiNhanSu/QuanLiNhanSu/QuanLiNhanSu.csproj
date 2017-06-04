@@ -51,6 +51,12 @@
     <Compile Include="BANGCAP.Designer.cs">
       <DependentUpon>BANGCAP.cs</DependentUpon>
     </Compile>
+    <Compile Include="CHITIETLUONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CHITIETLUONG.Designer.cs">
+      <DependentUpon>CHITIETLUONG.cs</DependentUpon>
+    </Compile>
     <Compile Include="CHUCVU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="DUAN.Designer.cs">
       <DependentUpon>DUAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LUONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LUONG.Designer.cs">
+      <DependentUpon>LUONG.cs</DependentUpon>
     </Compile>
     <Compile Include="MENU.cs">
       <SubType>Form</SubType>
@@ -88,14 +100,38 @@
     <Compile Include="NHANVIENVADUAN.Designer.cs">
       <DependentUpon>NHANVIENVADUAN.cs</DependentUpon>
     </Compile>
+    <Compile Include="PHO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PHO.Designer.cs">
+      <DependentUpon>PHO.cs</DependentUpon>
+    </Compile>
     <Compile Include="PHONGBAN.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PHONGBAN.Designer.cs">
       <DependentUpon>PHONGBAN.cs</DependentUpon>
     </Compile>
+    <Compile Include="PHUONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PHUONG.Designer.cs">
+      <DependentUpon>PHUONG.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SONHA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SONHA.Designer.cs">
+      <DependentUpon>SONHA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="THANHPHO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="THANHPHO.Designer.cs">
+      <DependentUpon>THANHPHO.cs</DependentUpon>
+    </Compile>
     <Compile Include="THONGKE_NHANVIENDUAN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,14 +144,26 @@
     <Compile Include="THONGKE_NHANVIENPHONGBAN.Designer.cs">
       <DependentUpon>THONGKE_NHANVIENPHONGBAN.cs</DependentUpon>
     </Compile>
+    <Compile Include="TINH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TINH.Designer.cs">
+      <DependentUpon>TINH.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BANGCAP.resx">
       <DependentUpon>BANGCAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CHITIETLUONG.resx">
+      <DependentUpon>CHITIETLUONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CHUCVU.resx">
       <DependentUpon>CHUCVU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DUAN.resx">
       <DependentUpon>DUAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LUONG.resx">
+      <DependentUpon>LUONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MENU.resx">
       <DependentUpon>MENU.cs</DependentUpon>
@@ -129,8 +177,14 @@
     <EmbeddedResource Include="NHANVIENVADUAN.resx">
       <DependentUpon>NHANVIENVADUAN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PHO.resx">
+      <DependentUpon>PHO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PHONGBAN.resx">
       <DependentUpon>PHONGBAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PHUONG.resx">
+      <DependentUpon>PHUONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,11 +196,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SONHA.resx">
+      <DependentUpon>SONHA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="THANHPHO.resx">
+      <DependentUpon>THANHPHO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="THONGKE_NHANVIENDUAN.resx">
       <DependentUpon>THONGKE_NHANVIENDUAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="THONGKE_NHANVIENPHONGBAN.resx">
       <DependentUpon>THONGKE_NHANVIENPHONGBAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TINH.resx">
+      <DependentUpon>TINH.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
